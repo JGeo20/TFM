@@ -1,0 +1,84 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Nombre de instancia de Data Factory",
+			"defaultValue": "pruebajg1"
+		},
+		"MongoDb1_connectionString": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"connectionString\"de \"MongoDb1\""
+		},
+		"MongoDb2_connectionString": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"connectionString\"de \"MongoDb2\""
+		},
+		"MongoDbAtlas1_connectionString": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"connectionString\"de \"MongoDbAtlas1\""
+		},
+		"MongoDb1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sample_supplies"
+		},
+		"MongoDb2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "01MBID_Actividad1_News"
+		},
+		"MongoDbAtlas1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sample_airbnb"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI de la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas."
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Token de SAS para la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "pruebajg1_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"MongoDb1_connectionString": {
+						"value": "[parameters('MongoDb1_connectionString')]"
+					},
+					"MongoDb2_connectionString": {
+						"value": "[parameters('MongoDb2_connectionString')]"
+					},
+					"MongoDbAtlas1_connectionString": {
+						"value": "[parameters('MongoDbAtlas1_connectionString')]"
+					},
+					"MongoDb1_properties_typeProperties_database": {
+						"value": "[parameters('MongoDb1_properties_typeProperties_database')]"
+					},
+					"MongoDb2_properties_typeProperties_database": {
+						"value": "[parameters('MongoDb2_properties_typeProperties_database')]"
+					},
+					"MongoDbAtlas1_properties_typeProperties_database": {
+						"value": "[parameters('MongoDbAtlas1_properties_typeProperties_database')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

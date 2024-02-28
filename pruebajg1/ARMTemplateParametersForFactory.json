@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "pruebajg1"
+		},
+		"MongoDb1_connectionString": {
+			"value": ""
+		},
+		"MongoDb2_connectionString": {
+			"value": ""
+		},
+		"MongoDbAtlas1_connectionString": {
+			"value": ""
+		},
+		"MongoDb1_properties_typeProperties_database": {
+			"value": "sample_supplies"
+		},
+		"MongoDb2_properties_typeProperties_database": {
+			"value": "01MBID_Actividad1_News"
+		},
+		"MongoDbAtlas1_properties_typeProperties_database": {
+			"value": "sample_airbnb"
+		}
+	}
+}
