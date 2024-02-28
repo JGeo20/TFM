@@ -14,6 +14,9 @@
 		"MongoDbAtlas1_connectionString": {
 			"value": ""
 		},
+		"GitHub1_credential": {
+			"value": ""
+		},
 		"MongoDb1_properties_typeProperties_database": {
 			"value": "sample_supplies"
 		},
@@ -22,6 +25,9 @@
 		},
 		"MongoDbAtlas1_properties_typeProperties_database": {
 			"value": "sample_airbnb"
+		},
+		"GitHub1_properties_typeProperties_username": {
+			"value": "JGeo20"
 		},
 		"containerUri": {
 			"value": ""

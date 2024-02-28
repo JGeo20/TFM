@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Cadena protegida para \"connectionString\"de \"MongoDbAtlas1\""
 		},
+		"GitHub1_credential": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"credential\"de \"GitHub1\""
+		},
 		"MongoDb1_properties_typeProperties_database": {
 			"type": "string",
 			"defaultValue": "sample_supplies"
@@ -30,6 +34,10 @@
 		"MongoDbAtlas1_properties_typeProperties_database": {
 			"type": "string",
 			"defaultValue": "sample_airbnb"
+		},
+		"GitHub1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "JGeo20"
 		},
 		"containerUri": {
 			"type": "string",
@@ -67,6 +75,9 @@
 					"MongoDbAtlas1_connectionString": {
 						"value": "[parameters('MongoDbAtlas1_connectionString')]"
 					},
+					"GitHub1_credential": {
+						"value": "[parameters('GitHub1_credential')]"
+					},
 					"MongoDb1_properties_typeProperties_database": {
 						"value": "[parameters('MongoDb1_properties_typeProperties_database')]"
 					},
@@ -75,6 +86,9 @@
 					},
 					"MongoDbAtlas1_properties_typeProperties_database": {
 						"value": "[parameters('MongoDbAtlas1_properties_typeProperties_database')]"
+					},
+					"GitHub1_properties_typeProperties_username": {
+						"value": "[parameters('GitHub1_properties_typeProperties_username')]"
 					}
 				}
 			},
